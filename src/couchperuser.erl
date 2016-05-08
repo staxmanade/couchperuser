@@ -107,7 +107,7 @@ ensure_security(User, Db) ->
     case lists:foldl(
            fun (Prop, SAcc) -> add_user(User, Prop, SAcc) end,
            {false, SecProps},
-           [<<"admins">>, <<"members">>]) of
+           [<<"members">>]) of
         {false, _} ->
             ok;
         {true, SecProps1} ->
